@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgb(61, 60, 60);
+  color: white;
+  height: 100px;
+  text-align: center;
+}
+
+main {
+  background-color: aqua;
+  height: 800px;
+}
+
+.contenedores {
+  height: 800px;
+  /* background-color: cadetblue; */
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.articulos {
+  border: 5px black solid;
+  /* margin: 20px; */
+  border-radius: 10px;
+  background-color: burlywood;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5fr 2.5fr 2fr;
+  grid-template-areas:
+    "photo photo"
+    "precioAct precioAct"
+    "minPrecio maxPrecio";
+}
+
+.contenedores img {
+  height: 200px;
+  width: 200px;
+  margin-top: 10px;
+  grid-area: photo;
+  justify-self: center;
+}
+
+.div1 {
+  height: 70px;
+  width: 50%;
+  border-radius: 10px;
+  grid-area: precioAct;
+  justify-self: center;
+  align-self: center;
+  border: 3px black solid;
+}
+
+.div2 {
+  height: 50px;
+  width: 70%;
+  border-radius: 10px;
+  grid-area: minPrecio;
+  justify-self: center;
+  align-self: center;
+  border: 3px rgb(194, 0, 0) solid;
+}
+
+.div3 {
+  height: 50px;
+  width: 70%;
+  border-radius: 10px;
+  grid-area: maxPrecio;
+  justify-self: center;
+  align-self: center;
+  border: 3px rgb(1, 196, 40) solid;
+}
