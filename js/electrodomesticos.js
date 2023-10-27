@@ -1,3 +1,5 @@
+//El consumo está puesto en w (watios)
+
 datosElectrodomesticos = [
   {
     electrodomestico: "estufa",
@@ -5,42 +7,42 @@ datosElectrodomesticos = [
   },
   {
     electrodomestico: "nevera",
-    consumo: 1000,
+    consumo: 150,
   },
   {
     electrodomestico: "congelador",
-    consumo: 1000,
+    consumo: 195,
   },
   {
     electrodomestico: "vitroceramica",
-    consumo: 1000,
+    consumo: 1200,
   },
   {
     electrodomestico: "pc",
-    consumo: 1000,
+    consumo: 300,
   },
   {
     electrodomestico: "tv",
-    consumo: 1000,
+    consumo: 140,
   },
   {
     electrodomestico: "lavadora",
-    consumo: 1000,
+    consumo: 520,
   },
   {
     electrodomestico: "microondas",
-    consumo: 1000,
+    consumo: 800,
   },
   {
     electrodomestico: "lavavajillas",
-    consumo: 1000,
+    consumo: 180,
   },
   {
     electrodomestico: "horno",
-    consumo: 1000,
+    consumo: 1300,
   },
   {
-    electrodomestico: "estufa",
-    consumo: 1000,
+    electrodomestico: "secadora",
+    consumo: 240,
   },
 ];
