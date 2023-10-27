@@ -4,32 +4,79 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
 header {
-  background-color: white;
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
   color: white;
   height: 150px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.datosContacto {
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+.datosContacto a {
+  text-decoration: none;
+  color: rgb(158, 156, 156);
+}
+
+.datosContacto a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+header img {
+  height: 150px;
+  width: 300px;
 }
 
 .divisor {
-  height: 5px;
+  height: 2px;
   width: 100%;
-  background-color: rgb(29, 29, 29);
+  background-color: rgb(70, 70, 70);
+}
+
+.buscador {
+  height: 50px;
+  background-color: rgb(225, 225, 225);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.buscador a {
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: rgb(158, 156, 156);
+  text-decoration: none;
+  display: block;
+}
+
+.buscador a:hover {
+  transform: scale(0.9);
+  color: black;
 }
 
 main {
-  background-color: aqua;
+  background-color: white;
   height: 200vh;
   width: 100vw;
 }
 
 .contenedores {
   height: 800px;
-  padding: 20px;
+  width: 100vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  row-gap: 20px;
-  column-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
 .contenedores img {
@@ -42,9 +89,11 @@ main {
 
 .articulos {
   height: 600px;
-  border: 3px black solid;
-  border-radius: 10px;
-  background-color: burlywood;
+  width: 480px;
+  margin: 90px;
+  border-radius: 5px;
+  background-color: rgb(235, 234, 232);
+  box-shadow: 5px 10px 5px 5px grey;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 5fr 2.5fr 2fr;
@@ -71,22 +120,22 @@ main {
   border: 3px black solid;
 }
 
-.div2 {
+.precioMinimo {
   height: 50px;
   width: 70%;
   border-radius: 10px;
   grid-area: minPrecio;
   justify-self: center;
   align-self: self-start;
-  border: 3px rgb(194, 0, 0) solid;
+  border: 3px rgb(1, 196, 40) solid;
 }
 
-.div3 {
+.precioMaximo {
   height: 50px;
   width: 70%;
   border-radius: 10px;
   grid-area: maxPrecio;
   justify-self: center;
   align-self: self-start;
-  border: 3px rgb(1, 196, 40) solid;
+  border: 3px rgb(194, 0, 0) solid;
 }
