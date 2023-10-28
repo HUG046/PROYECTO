@@ -1,6 +1,6 @@
 //El consumo está puesto en w/h(watios)
 
-datosElectrodomesticos = [
+export const datosElectrodomesticos = [
   {
     electrodomestico: "estufa",
     consumo: 1000,

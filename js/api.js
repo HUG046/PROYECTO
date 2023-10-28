@@ -1,4 +1,6 @@
 "use strict";
+import { datosElectrodomesticos } from "./electrodomesticos.js";
+// console.log(datosElectrodomesticos);
 
 async function obtenerDatos() {
   try {
@@ -27,7 +29,41 @@ async function obtenerDatos() {
 
 obtenerDatos().then((resultados) => {
   if (resultados) {
-    console.log(resultados);
+    // console.log(resultados);
+    let fechaActual = new Date();
+    let horaActual = fechaActual.getHours();
+    console.log(horaActual);
+
+    function redondearDecimal(numero, decimales) {
+      let factor = Math.pow(10, decimales);
+      return Math.round(numero * factor) / factor;
+    }
+
+    for (let datos of resultados) {
+      // console.log(datos.hora);
+      if (`${horaActual}-${horaActual + 1}` === datos.hora) {
+        console.log(datos.precio);
+        const precioEnWatiosHora = [];
+        for (let objeto of datosElectrodomesticos) {
+          const electrodomestico = objeto.electrodomestico;
+          const consumo = (datos.precio * objeto.consumo) / 1000000;
+          precioEnWatiosHora.push({
+            electrodomestico: electrodomestico,
+            consumo: redondearDecimal(consumo, 4),
+          });
+        }
+        console.log(precioEnWatiosHora);
+      }
+    }
+
+    const precioMax = resultados.sort((a, b) => {
+      return b.precio - a.precio;
+    });
+    const precioMaximo = precioMax[0];
+    const precioMinimo = precioMax[precioMax.length - 1];
+    console.log(precioMaximo);
+    console.log(precioMinimo);
+    console.log(precioMax);
   } else {
     console.log("Hubo un error al obtener los datos.");
   }
