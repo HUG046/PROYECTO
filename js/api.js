@@ -40,8 +40,9 @@ obtenerDatos().then((resultados) => {
     }
 
     for (let datos of resultados) {
-      // console.log(datos.hora);
-      if (`${horaActual}-${horaActual + 1}` === datos.hora) {
+      const horaToString = parseFloat(datos.hora);
+      // console.log(horaToString);
+      if (horaActual === horaToString) {
         console.log(datos.precio);
         const precioEnWatiosHora = [];
         for (let objeto of datosElectrodomesticos) {
