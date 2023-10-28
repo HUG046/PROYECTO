@@ -1,4 +1,4 @@
-//El consumo está puesto en w (watios)
+//El consumo está puesto en w/h(watios)
 
 datosElectrodomesticos = [
   {
