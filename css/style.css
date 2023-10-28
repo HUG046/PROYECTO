@@ -67,8 +67,8 @@ header img {
 }
 
 main {
-  background-color: white;
-  height: 200vh;
+  background-image: url(../img/fondo.jpg);
+  height: 400vh;
   width: 100vw;
 }
 
@@ -83,6 +83,7 @@ main {
   height: 300px;
   width: 300px;
   margin-top: 10px;
+  border-radius: 10px;
   grid-area: photo;
   justify-self: center;
 }
@@ -117,7 +118,8 @@ main {
   grid-area: precioAct;
   justify-self: center;
   align-self: center;
-  border: 3px black solid;
+  background-color: rgb(209, 209, 209);
+  box-shadow: 5px 5px 5px;
 }
 
 .precioMinimo {
@@ -127,7 +129,8 @@ main {
   grid-area: minPrecio;
   justify-self: center;
   align-self: self-start;
-  border: 3px rgb(1, 196, 40) solid;
+  background-color: rgb(209, 209, 209);
+  box-shadow: 5px 5px 5px rgb(1, 196, 40);
 }
 
 .precioMaximo {
@@ -137,5 +140,6 @@ main {
   grid-area: maxPrecio;
   justify-self: center;
   align-self: self-start;
-  border: 3px rgb(194, 0, 0) solid;
+  background-color: rgb(209, 209, 209);
+  box-shadow: 5px 5px 5px rgb(194, 0, 0);
 }
