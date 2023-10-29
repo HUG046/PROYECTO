@@ -57,7 +57,7 @@ obtenerDatos().then((resultados) => {
           (obj) => obj.electrodomestico === "estufa"
         );
         if (estufaHTML) {
-          const pEstufa = document.querySelector(".precioActualEstufa");
+          const pEstufa = document.querySelector(".precioAct");
           pEstufa.textContent = `${estufaHTML.consumo}KWh`;
         }
         console.log(precioEnWatiosHora);
@@ -76,3 +76,6 @@ obtenerDatos().then((resultados) => {
     console.log("Hubo un error al obtener los datos.");
   }
 });
+
+let x = document.querySelectorAll(".precioAct");
+console.log(x);
