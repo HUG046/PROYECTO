@@ -53,6 +53,13 @@ obtenerDatos().then((resultados) => {
             consumo: redondearDecimal(consumo, 4),
           });
         }
+        let estufaHTML = precioEnWatiosHora.find(
+          (obj) => obj.electrodomestico === "estufa"
+        );
+        if (estufaHTML) {
+          const pEstufa = document.querySelector(".precioActualEstufa");
+          pEstufa.textContent = `${estufaHTML.consumo}KWh`;
+        }
         console.log(precioEnWatiosHora);
       }
     }
