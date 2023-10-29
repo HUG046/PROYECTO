@@ -56,11 +56,11 @@ function obtenerDatos2() {
             });
           }
 
-          const pAct = document.querySelectorAll(".precioAct");
+          // const pAct = document.querySelectorAll(".precioAct");
           // console.log(pAct);
-          pAct.forEach((p, index) => {
-            p.textContent = `${precioEnWatiosHora[index].coste} €/wh`;
-          });
+          // pAct.forEach((p, index) => {
+          //   p.textContent = `${precioEnWatiosHora[index].coste} €/wh`;
+          // });
           // console.log(precioEnWatiosHora);
         }
       }
@@ -105,12 +105,22 @@ async function obtenerResultados() {
     localStorage.setItem("resultados", JSON.stringify(resultados));
     localStorage.setItem("horaResultados", ahora.getTime());
   }
+
+  const pAct = document.querySelectorAll(".precioAct");
+  if (resultados && pAct.length === resultados.length) {
+    pAct.forEach((p, index) => {
+      p.textContent = `${resultados[index].coste} €/wh`;
+    });
+  } else {
+    console.log("No se pudieron actualizar los precios en los elementos <p>.");
+  }
+
   console.log("Obtención definitiva de resultados del Backend:");
   return resultados;
 }
 
 // Obtención definitiva de resultados del Backend:
-resultados = obtenerResultados().then((resultados) => console.log(resultados));
+obtenerResultados().then((resultados) => console.log(resultados));
 
 function obtenerResultadosCache() {
   const cache = new Date(parseInt(localStorage.getItem("horaResultados")));
