@@ -56,7 +56,7 @@ obtenerDatos().then((resultados) => {
         const pAct = document.querySelectorAll(".precioAct");
         console.log(pAct);
         pAct.forEach((p, index) => {
-          p.textContent = `${precioEnWatiosHora[index].consumo}`;
+          p.textContent = `${precioEnWatiosHora[index].consumo} €/wh`;
         });
         console.log(precioEnWatiosHora);
       }
@@ -70,6 +70,9 @@ obtenerDatos().then((resultados) => {
     console.log(precioMaximo);
     console.log(precioMinimo);
     console.log(precioMax);
+    console.log(
+      `la hora mas cara es: ${precioMaximo.hora}, la hora mas barata es ${precioMinimo.hora}`
+    );
   } else {
     console.log("Hubo un error al obtener los datos.");
   }
