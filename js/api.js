@@ -74,6 +74,3 @@ obtenerDatos().then((resultados) => {
     console.log("Hubo un error al obtener los datos.");
   }
 });
-
-let x = document.querySelectorAll(".precioAct");
-console.log(x);
