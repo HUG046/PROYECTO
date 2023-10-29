@@ -55,12 +55,6 @@ function obtenerDatos2() {
               coste: redondearDecimal(coste, 4),
             });
           }
-
-          // const pAct = document.querySelectorAll(".precioAct");
-          // console.log(pAct);
-          // pAct.forEach((p, index) => {
-          //   p.textContent = `${precioEnWatiosHora[index].coste} €/wh`;
-          // });
           // console.log(precioEnWatiosHora);
         }
       }
@@ -76,6 +70,53 @@ function obtenerDatos2() {
       console.log(
         `la hora mas cara es: ${precioMaximo.hora}, la hora mas barata es ${precioMinimo.hora}`
       );
+      const precioHoraMax = [];
+      for (let datos of datosElectrodomesticos) {
+        // console.log(datos);
+        const electrodomestico = datos.electrodomestico;
+        const coste = (datos.consumo * precioMaximo.precio) / 1000000;
+
+        precioHoraMax.push({
+          electrodomestico: electrodomestico,
+          coste: redondearDecimal(coste, 4),
+        });
+      }
+      // console.log(precioHoraMax);
+
+      const pMax = document.querySelectorAll(".precioMax");
+      if (precioHoraMax && pMax.length === precioHoraMax.length) {
+        pMax.forEach((p, index) => {
+          p.textContent = `${precioHoraMax[index].coste} €/wh de ${precioMaximo.hora}`;
+        });
+      } else {
+        console.log(
+          "No se pudieron actualizar los precios en los elementos <p>."
+        );
+      }
+
+      const precioHoraMin = [];
+      for (let datos of datosElectrodomesticos) {
+        // console.log(datos);
+        const electrodomestico = datos.electrodomestico;
+        const coste = (datos.consumo * precioMinimo.precio) / 1000000;
+
+        precioHoraMin.push({
+          electrodomestico: electrodomestico,
+          coste: redondearDecimal(coste, 4),
+        });
+      }
+      // console.log(precioHoraMin);
+
+      const pMin = document.querySelectorAll(".precioMin");
+      if (precioHoraMin && pMax.length === precioHoraMin.length) {
+        pMin.forEach((p, index) => {
+          p.textContent = `${precioHoraMin[index].coste} €/wh de ${precioMinimo.hora}`;
+        });
+      } else {
+        console.log(
+          "No se pudieron actualizar los precios en los elementos <p>."
+        );
+      }
     } else {
       console.log("Hubo un error al obtener los datos.");
     }
@@ -119,9 +160,6 @@ async function obtenerResultados() {
   return resultados;
 }
 
-// Obtención definitiva de resultados del Backend:
-obtenerResultados().then((resultados) => console.log(resultados));
-
 function obtenerResultadosCache() {
   const cache = new Date(parseInt(localStorage.getItem("horaResultados")));
   console.log(
@@ -130,8 +168,19 @@ function obtenerResultadosCache() {
     ).padStart(2, "0")}`
   );
   const min5 = 1000 * 60 * 5;
+  const tiempo = (ahora.getTime() - cache.getTime()) / 60000;
 
-  console.log(`tiempo transcurrido: ${ahora.getTime() - cache.getTime()}`);
+  function redondearDecimal(numero, decimales) {
+    let factor = Math.pow(10, decimales);
+    return Math.round(numero * factor) / factor;
+  }
+
+  console.log(
+    `tiempo transcurrido desde última actualización: ${redondearDecimal(
+      tiempo,
+      2
+    )} minutos`
+  );
 
   if (ahora.getTime() - cache.getTime() < min5) {
     console.log("Recuperando resultados de caché (localStorage)");
@@ -141,3 +190,6 @@ function obtenerResultadosCache() {
     return false;
   }
 }
+
+// Obtención definitiva de resultados del Backend:
+obtenerResultados().then((resultados) => console.log(resultados));
