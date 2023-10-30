@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+header {
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  color: white;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.datosContacto {
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+.datosContacto a {
+  text-decoration: none;
+  color: rgb(158, 156, 156);
+}
+
+.datosContacto a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+header img {
+  height: 150px;
+  width: 300px;
+}
+
+.divisor {
+  height: 2px;
+  width: 100%;
+  background-color: rgb(70, 70, 70);
+}
+
+.buscador {
+  height: 50px;
+  background-color: rgb(225, 225, 225);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.buscador a {
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: rgb(158, 156, 156);
+  text-decoration: none;
+  display: block;
+}
+
+.buscador a:hover {
+  transform: scale(0.9);
+  color: black;
+}
+
+main {
+  background-image: url(../img/fondo.jpg);
+  height: 400vh;
+  width: 100vw;
+}
