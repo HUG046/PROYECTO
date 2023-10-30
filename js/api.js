@@ -182,7 +182,7 @@ obtenerResultados().then((resultados) => {
   const pAct = document.querySelectorAll(".precioAct");
   if (datosResultados && pAct.length === datosResultados.length) {
     pAct.forEach((p, index) => {
-      p.textContent = `${datosResultados[index].coste} €/wh`;
+      p.textContent = `Consumo actual: ${datosResultados[index].coste} €/wh`;
     });
   } else {
     console.log("No se pudieron actualizar los precios en los elementos <p>.");
@@ -191,11 +191,11 @@ obtenerResultados().then((resultados) => {
   const pMax = document.querySelectorAll(".precioMax");
 
   pMax.forEach((p, index) => {
-    p.textContent = `${datosResultados[index].max} €/wh de ${datosResultados[index].hora_max}`;
+    p.textContent = `El consumo mas caro del dia es: ${datosResultados[index].max} €/wh de ${datosResultados[index].hora_max}`;
   });
 
   const pMin = document.querySelectorAll(".precioMin");
   pMin.forEach((p, index) => {
-    p.textContent = `${datosResultados[index].min} €/wh de ${datosResultados[index].hora_min}`;
+    p.textContent = `El consumo mas barato del dia es: ${datosResultados[index].min} €/wh de ${datosResultados[index].hora_min}`;
   });
 });

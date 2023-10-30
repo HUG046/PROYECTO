@@ -123,7 +123,7 @@ main {
 }
 
 .precioMinimo {
-  height: 50px;
+  height: 100px;
   width: 70%;
   border-radius: 10px;
   grid-area: minPrecio;
@@ -134,7 +134,7 @@ main {
 }
 
 .precioMaximo {
-  height: 50px;
+  height: 100px;
   width: 70%;
   border-radius: 10px;
   grid-area: maxPrecio;
@@ -142,4 +142,33 @@ main {
   align-self: self-start;
   background-color: rgb(209, 209, 209);
   box-shadow: 5px 5px 5px rgb(194, 0, 0);
+  margin-bottom: 15px;
+}
+
+.precioMin {
+  display: flex;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  justify-content: center;
+}
+
+.precioMax {
+  display: flex;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  justify-content: center;
+}
+
+.precioActual {
+  display: flex;
+  font-size: 1em;
+  color: black;
+  text-align: center;
+  justify-content: center;
+}
+
+.precioAct {
+  align-self: center;
 }
