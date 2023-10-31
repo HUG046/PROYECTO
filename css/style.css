@@ -1,12 +1,13 @@
+@font-face {
+  font-family: netflix;
+  src: url("../font/NetflixSans-Regular.otf");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: netflix, sans-serif;
 }
 
 header {
@@ -46,16 +47,16 @@ header img {
 
 .buscador {
   height: 50px;
-  background-color: rgb(225, 225, 225);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   list-style: none;
+  gap: 40px;
 }
 
 .buscador a {
   font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(158, 156, 156);
   text-decoration: none;
   display: block;
@@ -76,12 +77,12 @@ main {
   height: 800px;
   width: 100vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
 }
 
 .contenedores img {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   margin-top: 10px;
   border-radius: 10px;
   grid-area: photo;
@@ -89,76 +90,100 @@ main {
 }
 
 .articulos {
-  height: 600px;
-  width: 480px;
-  margin: 90px;
+  height: 500px;
+  width: 700px;
+  margin: 60px;
+  padding: 20px;
   border-radius: 5px;
   background-color: rgb(235, 234, 232);
   box-shadow: 5px 10px 5px 5px grey;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 5fr 2.5fr 2fr;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
   grid-template-areas:
-    "titulo titulo"
-    "photo photo"
-    "precioAct precioAct"
-    "minPrecio maxPrecio";
+    "photo titulo"
+    "photo textConsAct"
+    "photo precioAct"
+    "photo textConsMin"
+    "photo minPrecio"
+    "photo textConsMax"
+    "photo maxPrecio";
+}
+
+.articulos:hover {
+  transform: scale(1.1);
 }
 
 .articulos h3 {
+  font-size: 2.5rem;
   grid-area: titulo;
-  align-self: end;
-  margin-left: 80px;
+  align-self: center;
+  justify-self: center;
+}
+
+.textConsAct {
+  grid-area: textConsAct;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.textConsMin {
+  grid-area: textConsMin;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.textConsMax {
+  grid-area: textConsMax;
+  align-self: center;
+  margin-left: 20px;
 }
 
 .precioActual {
-  height: 70px;
+  height: 25px;
   width: 50%;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   grid-area: precioAct;
   justify-self: center;
-  align-self: center;
-  background-color: rgb(209, 209, 209);
-  box-shadow: 5px 5px 5px;
+  align-self: self-start;
 }
 
 .precioMinimo {
-  height: 100px;
+  height: 25px;
   width: 70%;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   grid-area: minPrecio;
   justify-self: center;
   align-self: self-start;
-  background-color: rgb(209, 209, 209);
-  box-shadow: 5px 5px 5px rgb(1, 196, 40);
 }
 
 .precioMaximo {
-  height: 100px;
+  height: 25px;
   width: 70%;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   grid-area: maxPrecio;
   justify-self: center;
   align-self: self-start;
-  background-color: rgb(209, 209, 209);
-  box-shadow: 5px 5px 5px rgb(194, 0, 0);
-  margin-bottom: 15px;
 }
 
 .precioMin {
   display: flex;
   font-size: 1em;
-  color: black;
+  color: rgb(2, 166, 2);
   text-align: center;
   justify-content: center;
+  font-size: 1.5rem;
+  font-style: bold;
 }
 
 .precioMax {
   display: flex;
   font-size: 1em;
-  color: black;
+  color: red;
   text-align: center;
   justify-content: center;
+  font-size: 1.5rem;
+  font-style: bold;
 }
 
 .precioActual {
@@ -171,4 +196,6 @@ main {
 
 .precioAct {
   align-self: center;
+  font-size: 1.5rem;
+  font-style: bold;
 }
