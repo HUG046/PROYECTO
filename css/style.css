@@ -66,6 +66,27 @@ header img {
   color: black;
 }
 
+.buscador li {
+  /* Es el encargado de dividir las lineas de el nav por elementos */
+  position: relative;
+}
+
+.buscador li::before {
+  /* Linea de debajo del nav con la transicion para ver el movimiento de la linea al hacer hover, sino se vería de golpe sin el incremento*/
+  content: "";
+  height: 3px;
+  width: 0%;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 400ms ease;
+}
+
+.buscador li:hover::before {
+  width: 100%;
+}
+
 main {
   background-image: url(../img/fondo.jpg);
   height: 400vh;
@@ -172,7 +193,7 @@ main {
   text-align: center;
   justify-content: center;
   font-size: 1.5rem;
-  font-style: bold;
+  font-weight: bold;
 }
 
 .precioMax {
@@ -182,7 +203,7 @@ main {
   text-align: center;
   justify-content: center;
   font-size: 1.5rem;
-  font-style: bold;
+  font-weight: bold;
 }
 
 .precioActual {
@@ -196,5 +217,5 @@ main {
 .precioAct {
   align-self: center;
   font-size: 1.5rem;
-  font-style: bold;
+  font-weight: bold;
 }
