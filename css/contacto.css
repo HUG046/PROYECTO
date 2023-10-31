@@ -1,7 +1,12 @@
+@font-face {
+  font-family: netflix;
+  src: url("../font/NetflixSans-Regular.otf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: netflix, sans-serif;
 }
 
 html {
@@ -70,4 +75,38 @@ main {
   background-image: url(../img/fondo.jpg);
   height: 400vh;
   width: 100vw;
+}
+#titulo {
+  width: auto;
+  text-align: center;
+  margin: 5px;
+  color: white;
+  background-color: black;
+  padding: 20px;
+}
+.contenedor {
+  height: 800px;
+  width: 100vw;
+}
+.bloques {
+  height: auto;
+  width: auto;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(235, 234, 232);
+  box-shadow: 5px 10px 5px 5px grey;
+  align-items: center;
+}
+.bloques h2 {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.bloques p {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.enlaces {
+  text-decoration: none;
 }
