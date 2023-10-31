@@ -150,13 +150,13 @@ function obtenerResultadosCache() {
   );
 
   // si no han pasado más de 5min, se recuperan los datos de la caché(local storage)
-  // if (ahora.getTime() - cache.getTime() < min5) {
-  //   console.log("Recuperando resultados de caché (localStorage)");
-  //   return JSON.parse(localStorage.getItem("resultados"));
-  // } else {
-  //   // Ya han pasado más de 5min, solicitar datos de la API
-  //   return false;
-  // }
+  if (ahora.getTime() - cache.getTime() < min5) {
+    console.log("Recuperando resultados de caché (localStorage)");
+    return JSON.parse(localStorage.getItem("resultados"));
+  } else {
+    // Ya han pasado más de 5min, solicitar datos de la API
+    return false;
+  }
 }
 
 let datosResultados = [];
