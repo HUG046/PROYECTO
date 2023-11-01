@@ -1,6 +1,6 @@
 "use strict";
 import { datosElectrodomesticos } from "./electrodomesticos.js";
-// console.log(datosElectrodomesticos);
+
 const precioEnWatiosHora = [];
 
 async function obtenerDatos() {
@@ -17,7 +17,8 @@ async function obtenerDatos() {
       const hora = clave;
       const precio = procesado.data[clave].price;
       const unidades = procesado.data[clave].units;
-      resultados.push({ hora, precio, unidades });
+      const media = procesado.data[clave]["is-under-avg"];
+      resultados.push({ hora, precio, unidades, media });
     }
     // console.log(resultados);
 
@@ -31,7 +32,6 @@ async function obtenerDatos() {
 function obtenerDatos2() {
   return obtenerDatos().then((resultados) => {
     if (resultados) {
-      let costeElectrodomestico = {};
       // console.log(resultados);
       let fechaActual = new Date();
       let horaActual = fechaActual.getHours();
@@ -87,21 +87,6 @@ function obtenerDatos2() {
 
         precioEnWatiosHora[i].min = redondearDecimal(costeMin, 4);
         precioEnWatiosHora[i].hora_min = precioMinimo.hora;
-
-        // precioHoraMin.push({
-        //   electrodomestico: electrodomestico,
-        //   coste: redondearDecimal(coste, 4),
-        // });
-        // precioHoraMax.push({
-        //   electrodomestico: electrodomestico,
-        //   coste: redondearDecimal(coste, 4),
-        // });
-
-        // console.log(precioHoraMax);
-
-        // const precioHoraMin = [];
-        // for (let datos of datosElectrodomesticos) {
-        // console.log(datos);
       }
       console.log("Precioenwatioshora:");
       console.log(precioEnWatiosHora);
@@ -173,6 +158,17 @@ function obtenerResultadosCache() {
   }
 }
 
+function actualizarFechaYHora() {
+  const pFechaActual = document.querySelector(".fecha");
+  if (pFechaActual) {
+    const ahora = new Date();
+    const fechaHoraTexto = `Fecha actual: ${ahora.toLocaleString()}`;
+    pFechaActual.textContent = fechaHoraTexto;
+  }
+}
+setInterval(actualizarFechaYHora, 1000);
+actualizarFechaYHora();
+
 let datosResultados = [];
 // Obtención definitiva de resultados del Backend:
 obtenerResultados().then((resultados) => {
@@ -190,11 +186,11 @@ obtenerResultados().then((resultados) => {
 
   const pMax = document.querySelectorAll(".precioMax");
   pMax.forEach((p, index) => {
-    p.textContent = `${datosResultados[index].max} €/wh de ${datosResultados[index].hora_max}`;
+    p.textContent = `${datosResultados[index].max} €/wh de ${datosResultados[index].hora_max}h`;
   });
 
   const pMin = document.querySelectorAll(".precioMin");
   pMin.forEach((p, index) => {
-    p.textContent = `${datosResultados[index].min} €/wh de ${datosResultados[index].hora_min}`;
+    p.textContent = `${datosResultados[index].min} €/wh de ${datosResultados[index].hora_min}h`;
   });
 });

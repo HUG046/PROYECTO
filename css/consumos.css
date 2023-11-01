@@ -2,6 +2,7 @@
   font-family: netflix;
   src: url("../font/NetflixSans-Regular.otf");
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -102,58 +103,127 @@ header img {
 /* ------------ MAIN ------------ */
 
 main {
-  background-image: url(../img/fondo.jpg);
   grid-area: main;
-}
-#titulo {
-  width: auto;
-  text-align: center;
-  margin: 5px;
-  color: white;
-  background-color: black;
-  padding: 20px;
+  background-image: url(../img/fondo.jpg);
 }
 
-.contenedor {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.fecha {
+  padding: 10px;
+  font-size: 1.2rem;
 }
 
-.bloques {
-  width: 1200px;
-  margin: 30px;
+.textoInicial {
+  padding: 10px;
+  font-size: 1.3rem;
+  margin-left: 80px;
+}
+
+.contenedores {
+  /* Seccion a la que le damos display grid y generamos columnas responsive para adaptarnos a diferentes tamaños de pantalla */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  row-gap: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.articulos {
+  height: 450px;
+  width: 700px;
   padding: 20px;
-  border-radius: 5px;
   background-color: rgb(235, 234, 232);
-  box-shadow: 5px 10px 5px 5px grey;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.bloques h2 {
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 15px;
-}
-.bloques p {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-}
-
-.textFigure {
-  margin-top: 20px;
-  border: 1px solid black;
   border-radius: 5px;
+  box-shadow: 5px 10px 5px 5px grey;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-areas:
+    "photo titulo"
+    "photo textConsAct"
+    "photo precioAct"
+    "photo textConsMin"
+    "photo minPrecio"
+    "photo textConsMax"
+    "photo maxPrecio";
 }
 
-.textFigCap {
-  font-style: italic;
-  margin-bottom: 30px;
-}
-
-.imgLogos {
+.articulos img {
+  /* Imagen de cada artículo */
+  grid-area: photo;
   height: 200px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.articulos h3 {
+  /* Nombre electrodoméstico */
+  grid-area: titulo;
+  font-size: 2.5rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.textConsAct {
+  /* Texto precio actual */
+  grid-area: textConsAct;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.precioActual {
+  /* Precio (€/wh) de la hora actual*/
+  grid-area: precioAct;
+  justify-self: center;
+  align-self: self-start;
+}
+
+.precioAct {
+  /* Estilos texto del precio de la hora actual */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.textConsMin {
+  /* Texto Precio más barato */
+  grid-area: textConsMin;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.precioMinimo {
+  /* Precio (€/wh) de la hora más barata */
+  grid-area: minPrecio;
+  justify-self: center;
+  align-self: self-start;
+}
+
+.precioMin {
+  /* Estilos texto del precio de la hora más barata */
+  font-size: 1.5rem;
+  color: rgb(2, 166, 2);
+  font-weight: bold;
+}
+
+.textConsMax {
+  /* Texto Precio más caro */
+  grid-area: textConsMax;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.precioMaximo {
+  /* Precio (€/wh) de la hora más cara */
+  grid-area: maxPrecio;
+  justify-self: center;
+  align-self: self-start;
+}
+
+.precioMax {
+  /* Estilos texto del precio de la hora más cara */
+  font-size: 1.5rem;
+  color: rgb(214, 0, 0);
+  font-weight: bold;
 }
 
 /* ------------ FOOTER ------------ */

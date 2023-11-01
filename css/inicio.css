@@ -1,26 +1,45 @@
+@font-face {
+  font-family: netflix;
+  src: url("../font/NetflixSans-Regular.otf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: netflix, sans-serif;
 }
 
-html {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+body {
+  /* Esquematizamos la página con grid, dividiendo los elementos */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px 2px 50px 1fr 100px;
+  grid-template-areas:
+    "header"
+    "div"
+    "nav"
+    "main"
+    "footer";
 }
-
+/* ------------ HEADER ------------ */
 header {
+  grid-area: header;
   background-image: url(../img/banner.jpg);
-  background-size: cover;
-  color: white;
-  height: 150px;
   display: flex;
   justify-content: space-between;
 }
 
+header img {
+  /* Logo empresa*/
+  height: 150px;
+  width: 300px;
+}
+
 .datosContacto {
+  /* Datos de contacto */
   font-size: 1.5rem;
   padding: 20px;
+  list-style: none;
 }
 
 .datosContacto a {
@@ -32,33 +51,26 @@ header {
   color: black;
   text-decoration: underline;
 }
-
-header img {
-  height: 150px;
-  width: 300px;
-}
-
+/* ------------ LINEA DIVISORA HEADER/NAV ------------ */
 .divisor {
   height: 2px;
   width: 100%;
   background-color: rgb(70, 70, 70);
 }
-
+/* ------------ NAV ------------ */
 .buscador {
   height: 50px;
-  background-color: rgb(225, 225, 225);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   list-style: none;
+  gap: 40px;
 }
 
 .buscador a {
-  font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: rgb(158, 156, 156);
   text-decoration: none;
-  display: block;
 }
 
 .buscador a:hover {
@@ -66,8 +78,84 @@ header img {
   color: black;
 }
 
-main {
-  background-image: url(../img/fondo.jpg);
-  height: 400vh;
-  width: 100vw;
+.buscador li {
+  /* Es el encargado de dividir las lineas de el nav por elementos */
+  position: relative;
+}
+
+.buscador li::before {
+  /* Linea de debajo del nav con la transicion para ver el movimiento de la linea al hacer hover, sino se vería de golpe sin el incremento*/
+  content: "";
+  height: 2px;
+  width: 0%;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 400ms ease;
+}
+
+.buscador li:hover::before {
+  /* Al cambiar el ancho hacemos que se realice la transición anteriormente declarada */
+  width: 100%;
+}
+/* ------------ MAIN ------------ */
+
+.imgFondo {
+  background-image: url(../img/casa.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotacionimg 10s alternate infinite;
+}
+
+@keyframes rotacionimg {
+  0% {
+    background-image: url(../img/casa.jpg);
+  }
+
+  50% {
+    background-image: url(../img/central.jpg);
+  }
+
+  100% {
+    background-image: url(../img/placas.jpg);
+  }
+}
+
+.sombraFondo {
+  background-color: rgba(0, 0, 0, 0.668);
+  height: 80vh;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  font-size: 5rem;
+}
+
+.sombraFondo p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ------------ FOOTER ------------ */
+
+footer {
+  /* Pie de página */
+  grid-area: footer;
+  background-color: rgb(33, 32, 32);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer ul {
+  /* Retirada de estilos a la lista desordenada */
+  list-style: none;
 }
