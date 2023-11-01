@@ -112,6 +112,12 @@ main {
   font-size: 1.2rem;
 }
 
+.textoInicial {
+  padding: 10px;
+  font-size: 1.3rem;
+  margin-left: 80px;
+}
+
 .contenedores {
   /* Seccion a la que le damos display grid y generamos columnas responsive para adaptarnos a diferentes tamaños de pantalla */
   display: grid;
