@@ -189,7 +189,6 @@ obtenerResultados().then((resultados) => {
   }
 
   const pMax = document.querySelectorAll(".precioMax");
-
   pMax.forEach((p, index) => {
     p.textContent = `${datosResultados[index].max} €/wh de ${datosResultados[index].hora_max}`;
   });
