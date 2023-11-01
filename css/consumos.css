@@ -25,7 +25,8 @@ body {
 /* ------------ HEADER ------------ */
 header {
   grid-area: header;
-  background-image: url(../img/banner.jpg);
+  background-image: url(../img/bannerOsc.jpg);
+  background-size: cover;
   display: flex;
   justify-content: space-between;
 }
@@ -45,7 +46,7 @@ header img {
 
 .datosContacto a {
   text-decoration: none;
-  color: rgb(158, 156, 156);
+  color: rgb(202, 202, 202);
 }
 
 .datosContacto a:hover {
@@ -242,4 +243,85 @@ footer {
 footer ul {
   /* Retirada de estilos a la lista desordenada */
   list-style: none;
+}
+
+/* ------------ RESPONSIVE DIFERENTES PANTALLAS ------------ */
+
+@media screen and (max-width: 1780px) {
+  .datosContacto {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 958px) {
+  header {
+    justify-content: center;
+    background-image: none;
+    background-color: #5f5f5f;
+  }
+
+  .buscador a {
+    font-size: 1rem;
+  }
+
+  .sombraFondo {
+    text-align: center;
+  }
+
+  .textoInicial {
+    margin-left: 20px;
+  }
+
+  footer ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .articulos {
+    height: 700px;
+    width: 600px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "photo titulo"
+      "textConsAct textConsAct"
+      "precioAct precioAct"
+      "textConsMin textConsMin"
+      "minPrecio minPrecio"
+      "textConsMax textConsMax"
+      "maxPrecio maxPrecio"
+      "maxPrecio maxPrecio";
+  }
+
+  .articulos img {
+    justify-self: center;
+    align-self: center;
+  }
+
+  .articulos h3 {
+    font-size: 3.5rem;
+  }
+
+  .articulos p {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    grid-template-rows: 150px 2px 50px 1fr 100px;
+  }
+
+  .buscador {
+    height: 50px;
+  }
+
+  /* .buscador a {
+    font-size: 0.8rem;
+  } */
+
+  footer ul li {
+    font-size: 0.6rem;
+  }
 }
