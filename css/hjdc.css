@@ -113,17 +113,23 @@ main {
   background-color: black;
   padding: 20px;
 }
+
 .contenedor {
-  height: 800px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
+
 .bloques {
-  height: auto;
-  width: auto;
+  width: 1200px;
   margin: 30px;
   padding: 20px;
   border-radius: 5px;
   background-color: rgb(235, 234, 232);
   box-shadow: 5px 10px 5px 5px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .bloques h2 {
   text-align: center;
@@ -133,6 +139,21 @@ main {
 .bloques p {
   font-size: 1.5rem;
   margin-bottom: 5px;
+}
+
+.textFigure {
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.textFigCap {
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+.imgLogos {
+  height: 200px;
 }
 
 /* ------------ FOOTER ------------ */

@@ -144,21 +144,26 @@ main {
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 150px 150px 150px 150px;
+  grid-template-rows: 160px 50px 50px 50px 230px;
   grid-template-areas:
     "contactos mapa"
     "web mapa"
     "telefono mapa"
+    "mapInfo mapa"
     "mapInfo mapa";
 }
 .bloques h2 {
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  align-self: end;
 }
 .bloques p {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+#mapInfo {
+  align-self: start;
+  margin-top: 30px;
 }
 .enlaces {
   text-decoration: none;
