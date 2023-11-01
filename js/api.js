@@ -1,6 +1,6 @@
 "use strict";
 import { datosElectrodomesticos } from "./electrodomesticos.js";
-// console.log(datosElectrodomesticos);
+
 const precioEnWatiosHora = [];
 
 async function obtenerDatos() {
@@ -32,7 +32,6 @@ async function obtenerDatos() {
 function obtenerDatos2() {
   return obtenerDatos().then((resultados) => {
     if (resultados) {
-      let costeElectrodomestico = {};
       // console.log(resultados);
       let fechaActual = new Date();
       let horaActual = fechaActual.getHours();
@@ -158,6 +157,17 @@ function obtenerResultadosCache() {
     return false;
   }
 }
+
+function actualizarFechaYHora() {
+  const pFechaActual = document.querySelector(".fecha");
+  if (pFechaActual) {
+    const ahora = new Date();
+    const fechaHoraTexto = `Fecha actual: ${ahora.toLocaleString()}`;
+    pFechaActual.textContent = fechaHoraTexto;
+  }
+}
+
+actualizarFechaYHora();
 
 let datosResultados = [];
 // Obtención definitiva de resultados del Backend:
