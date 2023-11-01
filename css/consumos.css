@@ -107,6 +107,11 @@ main {
   background-image: url(../img/fondo.jpg);
 }
 
+.fecha {
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
 .contenedores {
   /* Seccion a la que le damos display grid y generamos columnas responsive para adaptarnos a diferentes tamaños de pantalla */
   display: grid;

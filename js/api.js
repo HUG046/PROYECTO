@@ -166,7 +166,7 @@ function actualizarFechaYHora() {
     pFechaActual.textContent = fechaHoraTexto;
   }
 }
-
+setInterval(actualizarFechaYHora, 1000);
 actualizarFechaYHora();
 
 let datosResultados = [];
