@@ -108,6 +108,14 @@ main {
   background-image: url(../img/fondo.jpg);
 }
 
+main h2 {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 5px;
+}
+
 .fecha {
   padding: 10px;
   font-size: 1.2rem;
