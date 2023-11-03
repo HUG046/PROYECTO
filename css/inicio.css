@@ -198,6 +198,10 @@ footer ul {
     grid-template-rows: 150px 2px 30px 1fr 100px;
   }
 
+  .sombraFondo p {
+    font-size: 1.2rem;
+  }
+
   .buscador {
     height: 30px;
   }
