@@ -291,11 +291,13 @@ footer ul {
   #contactos {
     margin-left: 10px;
     width: 250px;
+    align-self: center;
   }
 
   .bloques p {
     margin-left: 20px;
     width: 250px;
+    font-size: 0.8rem;
   }
 
   #mapa {

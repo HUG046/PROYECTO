@@ -318,16 +318,56 @@ footer ul {
 
 @media screen and (max-width: 425px) {
   body {
-    grid-template-rows: 150px 2px 50px 1fr 100px;
+    grid-template-rows: 150px 2px 30px 1fr 100px;
   }
 
   .buscador {
-    height: 50px;
+    height: 30px;
   }
 
-  /* .buscador a {
+  .buscador a {
+    font-size: 0.6rem;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  .fecha,
+  .textoInicial {
     font-size: 0.8rem;
-  } */
+  }
+
+  .articulos {
+    height: 500px;
+    width: 90vw;
+    margin-left: 20px;
+    justify-self: self-start;
+    grid-template-rows: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "titulo titulo"
+      "photo photo"
+      "textConsAct textConsAct"
+      "precioAct precioAct"
+      "textConsMin textConsMin"
+      "minPrecio minPrecio"
+      "textConsMax textConsMax"
+      "maxPrecio maxPrecio"
+      "maxPrecio maxPrecio";
+  }
+
+  .articulos h3 {
+    font-size: 1.3rem;
+  }
+
+  .textoInicial {
+    width: 340px;
+    margin-left: 5px;
+  }
+
+  .articulos p {
+    font-size: 0.8rem;
+  }
 
   footer ul li {
     font-size: 0.6rem;

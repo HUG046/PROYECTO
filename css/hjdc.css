@@ -210,3 +210,40 @@ footer ul {
     width: 550px;
   }
 }
+
+@media screen and (max-width: 425px) {
+  body {
+    grid-template-rows: 150px 2px 30px 1fr 100px;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  .buscador {
+    height: 30px;
+  }
+
+  .buscador a {
+    font-size: 0.6rem;
+  }
+
+  .bloques {
+    width: 90vw;
+  }
+
+  .bloques p {
+    margin-left: 20px;
+    width: 250px;
+    font-size: 0.8rem;
+  }
+
+  .imgLogos {
+    width: 70vw;
+    height: 150px;
+  }
+
+  footer ul li {
+    font-size: 0.6rem;
+  }
+}
